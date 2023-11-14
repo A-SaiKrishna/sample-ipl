@@ -2,7 +2,7 @@ let problem1 = require("../problem1.js");
 let matches = require("/home/saikrishna/Documents/js-ipl-data-project/src/data/match.json");
 
 const yearObject = problem1(matches);
-console.log(yearObject);
+//console.log(yearObject);
 
 require("fs").writeFileSync(
   "/home/saikrishna/Documents/js-ipl-data-project/src/public/output/problem1.json",
