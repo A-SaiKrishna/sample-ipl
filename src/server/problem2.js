@@ -3,7 +3,9 @@ function problem2(matches) {
   for (let index = 0; index < matches.length; index++) {
     let year = matches[index]["season"];
     let team = matches[index]["winner"];
-    if (teamWins[year] === undefined) teamWins[year] = {};
+    if (teamWins[year] === undefined) {
+      teamWins[year] = {};
+    }
     if (teamWins[year][team] === undefined) {
       teamWins[year][team] = 1;
     } else {
