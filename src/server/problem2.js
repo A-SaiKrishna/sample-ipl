@@ -7,7 +7,7 @@ function problem2(matches) {
     if (teamWins[year][team] === undefined) {
       teamWins[year][team] = 1;
     } else {
-      teamWins[year][team] += 1;
+      if (matches[index]["result"] !== "tie") teamWins[year][team] += 1;
     }
   }
   return teamWins;
