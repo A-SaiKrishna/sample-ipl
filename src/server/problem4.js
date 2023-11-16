@@ -1,9 +1,9 @@
 //refrenced from http://allthatcricket.com/runs-per-over-economy-rate/
 let totalRun = require("./totalRun.js");
 let totalBall = require("./totalOver.js");
-function problem4(deliveries, ids) {
-  let totalRunsByBowler = totalRun(deliveries, ids);
-  let totalOversByBowler = totalBall(deliveries, ids);
+function problem4(deliveries) {
+  let totalRunsByBowler = totalRun(deliveries);
+  let totalOversByBowler = totalBall(deliveries);
   let economy = {};
   for (let item in totalRunsByBowler) {
     let overs = totalOversByBowler[item] / 6 + (totalOversByBowler[item] % 6);

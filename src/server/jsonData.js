@@ -10,7 +10,7 @@ function jsonData() {
   csv()
     .fromFile(matchLocation)
     .then((arrayObj) => {
-      console.log(arrayObj);
+      //console.log(arrayObj);
       fs.writeFileSync(
         "../data/match.json",
         JSON.stringify(arrayObj),
@@ -27,7 +27,7 @@ function jsonData() {
   csv()
     .fromFile(deleLocation)
     .then((arrayObj) => {
-      console.log(arrayObj);
+      //console.log(arrayObj);
       fs.writeFileSync(
         "../data/deliveries.json",
         JSON.stringify(arrayObj),

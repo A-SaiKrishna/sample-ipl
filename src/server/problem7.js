@@ -1,4 +1,4 @@
-function problem7(deliveries, yearIDS) {
+function problem7(deliveries) {
   let ballsFaced = {};
   let runsScored = {};
   for (let index = 0; index < deliveries.length; index++) {
@@ -6,21 +6,13 @@ function problem7(deliveries, yearIDS) {
 
     let runs = Number(deliveries[index]["batsman_runs"]);
 
-    for (let index2 = 0; index2 < yearIDS.length; index2++) {
-      if (yearIDS[index2].includes(deliveries[index]["match_id"])) {
-        let year = String(2008 + index2);
-        if (ballsFaced[year] === undefined) ballsFaced[year] = {};
-        if (runsScored[year] === undefined) runsScored[year] = {};
-        if (ballsFaced[year][player] === undefined)
-          ballsFaced[year][player] = 0;
-        if (runsScored[year][player] === undefined)
-          runsScored[year][player] = 0;
-        if (deliveries[index]["wide_runs"] === "0")
-          ballsFaced[year][player] += 1;
-        runsScored[year][player] += runs;
-        break;
-      }
-    }
+    let year = deliveries[index]["season"];
+    if (ballsFaced[year] === undefined) ballsFaced[year] = {};
+    if (runsScored[year] === undefined) runsScored[year] = {};
+    if (ballsFaced[year][player] === undefined) ballsFaced[year][player] = 0;
+    if (runsScored[year][player] === undefined) runsScored[year][player] = 0;
+    if (deliveries[index]["wide_runs"] === "0") ballsFaced[year][player] += 1;
+    runsScored[year][player] += runs;
   }
 
   let ans = {};

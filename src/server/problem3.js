@@ -1,7 +1,8 @@
-function problem3(deliveries, ids) {
+function problem3(deliveries) {
   let ans = {};
+
   for (let index = 0; index < deliveries.length; index++) {
-    if (ids.includes(deliveries[index]["match_id"])) {
+    if (deliveries[index]["season"] === "2016") {
       let team = deliveries[index]["batting_team"];
       let extra = Number(deliveries[index]["extra_runs"]);
       if (ans[team] === undefined) {
@@ -10,6 +11,7 @@ function problem3(deliveries, ids) {
       ans[team] += extra;
     }
   }
+
   return ans;
 }
 module.exports = problem3;

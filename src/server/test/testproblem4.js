@@ -1,11 +1,10 @@
 let problem4 = require("../problem4.js");
-let matches = require("/home/saikrishna/Documents/js-ipl-data-project/src/data/match.json");
-let deliveries = require("/home/saikrishna/Documents/js-ipl-data-project/src/data/deliveries.json");
-let findIds = require("../findIds.js");
+//let matches = require("/home/saikrishna/Documents/js-ipl-data-project/src/data/match.json");
+let updeliveries = require("/home/saikrishna/Documents/js-ipl-data-project/src/data/updateddeliveries.json");
+//let findIds = require("../findIds.js");
 
 function testproblem4() {
-  const ids = findIds(matches, "2015");
-  let bowlers = problem4(deliveries, ids);
+  let bowlers = problem4(updeliveries);
   let bowlersArray = Object.entries(bowlers);
   bowlersArray.sort((a, b) => a[1] - b[1]);
   //console.log(bowlersArray);

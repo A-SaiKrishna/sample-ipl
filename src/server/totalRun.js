@@ -1,7 +1,7 @@
-function totalRun(deliveries, ids) {
+function totalRun(deliveries) {
   let totalRuns = {};
-  for (index = 0; index < deliveries.length; index++) {
-    if (ids.includes(deliveries[index]["match_id"])) {
+  for (let index = 0; index < deliveries.length; index++) {
+    if (deliveries[index]["season"] === "2015") {
       let bowler = deliveries[index]["bowler"];
       let runInMatch = Number(deliveries[index]["total_runs"]);
       if (totalRuns[bowler] === undefined) {

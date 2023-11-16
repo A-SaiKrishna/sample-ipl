@@ -1,7 +1,7 @@
-function totalOver(deliveries, ids) {
+function totalOver(deliveries) {
   let totalBalls = {};
   for (let index = 0; index < deliveries.length; index++) {
-    if (ids.includes(deliveries[index]["match_id"])) {
+    if (deliveries[index]["season"] === "2015") {
       let bowler = deliveries[index]["bowler"];
       if (totalBalls[bowler] === undefined) totalBalls[bowler] = 0;
       else {

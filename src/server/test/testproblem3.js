@@ -1,13 +1,10 @@
 let problem3 = require("../problem3.js");
-let matches = require("/home/saikrishna/Documents/js-ipl-data-project/src/data/match.json");
-let deliveries = require("/home/saikrishna/Documents/js-ipl-data-project/src/data/deliveries.json");
-let findIds = require("../findIds.js");
+//let matches = require("/home/saikrishna/Documents/js-ipl-data-project/src/data/match.json");
+let updatedDeliveriesdeliveries = require("/home/saikrishna/Documents/js-ipl-data-project/src/data/updateddeliveries.json");
 
+//onsole.log(ans);
 function testproblem3() {
-  const ids = findIds(matches, "2016");
-  const ans = problem3(deliveries, ids);
-  //onsole.log(ans);
-
+  let ans = problem3(updatedDeliveriesdeliveries);
   require("fs").writeFileSync(
     "/home/saikrishna/Documents/js-ipl-data-project/src/public/output/problem3.json",
     JSON.stringify(ans),
